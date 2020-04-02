@@ -2,11 +2,15 @@
 
 body {
     font-family: 'Do Hyeon', sans-serif;
+    background-color: lightgrey;
 }
 
 .cover {
     width: 200px;
     height: 200px;
+    border-radius: 10px;
+    border: 3px black solid;
+    margin-top: 15px;
 }
 
 .albumSummary {
@@ -18,9 +22,14 @@ body {
     width: 300px;
     height: 400px;
     text-align: center;
+    background-color: white;
 }
 
 .albumSummary:hover {
-    background-color: aquamarine;
     cursor: pointer;
+    background-color: bisque;
+}
+
+a {
+    color: black;
 }
