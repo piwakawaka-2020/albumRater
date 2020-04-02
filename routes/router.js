@@ -10,4 +10,19 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/album/:id', (req, res) =>{
+    dummyData ={
+        name: "Album Title",
+        cover: "Image goes here",
+        artist: "The Bestest Group Ever",
+        year: "2019",
+        comments: [
+            {rating: "9", comment:"This is the first comment"},
+            {rating: "9", comment:"This is the first comment"},
+            {rating: "9", comment:"This is the first comment"}
+        ]
+    }
+    res.render('view.hbs', dummyData)
+})
+
 module.exports = router
