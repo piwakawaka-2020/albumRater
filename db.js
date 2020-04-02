@@ -8,7 +8,20 @@ function getAlbums(db = connection) {
   return db('albums').select()
 }
 
+function getComments (id, db = connection) {
+  return db('reviews')
+  .select('rating', 'comment', 'album_id')
+  .where(id, 'album_id')
+}
+
+function getAlbumsById(id, db = connection) {
+  return db('albums')
+  .select()
+  .where(id, 'id')
+
 //export functions
 module.exports = {
-  getAlbums
+  getAlbums: getAlbums,
+  getAlbumsById: getAlbumsById,
+  getComments: getComments
 }
