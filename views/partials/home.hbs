@@ -1,9 +1,11 @@
 <h1>Album List</h1>
 {{#each albums}}
-  <div class='albumSummary'>
-    <img class='cover' src={{cover}} />
-    <h2>{{name}}</h2>
-    <h2>{{artist}}</h2>
-    <h2>{{year}}</h2>
-  </div>
+  <a href='/album/{{id}}'>
+    <div class='albumSummary'>
+      <img class='cover' src={{cover}} />
+      <h2>{{name}}</h2>
+      <h2>{{artist}}</h2>
+      <h2>{{year}}</h2>
+    </div>
+  </a>
 {{/each}}
