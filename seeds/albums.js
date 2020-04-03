@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('albums').insert([
-        {id: 1, name: 'Blonde', artist: 'Frank Ocean', year: '2016', cover: 'https://frankocean.tumblr.com/image/149244778551'},
+        {id: 1, name: 'Blonde', artist: 'Frank Ocean', year: '2016', cover: 'https://www.okayplayer.com/wp-content/uploads/2016/08/Blonde-4-715x715.jpg'},
         {id: 2, name: '3001: A Laced Odyssey', artist: 'Flatbush Zombies', year: '2016', cover: 'https://exclaim.ca//images/flatbush3001.png'},
         {id: 3, name: 'Luv is Rage 2', artist: 'Lil Uzi Vert', year: '2017', cover: 'https://images.genius.com/099e41c3c6e8f81359e0231aa0bf6018.1000x1000x1.png'},
         {id: 4, name: 'Magical Mystery Tour', artist: 'The Beatles', year: '1967', cover: 'https://d2s36jztkuk7aw.cloudfront.net/sites/default/files/tile/image/Magical_0.jpg'},
