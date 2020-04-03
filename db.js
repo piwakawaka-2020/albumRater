@@ -20,9 +20,15 @@ function getAlbumsById(id, db = connection) {
   .where('id', id)
 
 }
+
+function addComment(album_id, rating, comment, db = connection) {
+  return db('reviews').insert({'album_id': album_id, 'rating': rating, 'comment': comment})
+}
+
 //export functions
 module.exports = {
   getAlbums: getAlbums,
   getAlbumsById: getAlbumsById,
-  getComments: getComments
+  getComments: getComments,
+  addComment: addComment
 }

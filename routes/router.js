@@ -17,20 +17,26 @@ router.get('/album/:id', (req, res) =>{
     db.getAlbumsById(req.params.id).then(album => {
         albumObj = album[0]
         db.getComments(req.params.id).then(comments => {
-            commentArray = comments
 
             viewData = {
+                id: req.params.id,
                 name: albumObj.name,
                 cover: albumObj.cover,
                 artist: albumObj.artist,
                 year: albumObj.year,
-                comments: commentArray
+                comments: comments
             }
 
             res.render('view.hbs', viewData)
         })
     })
 
+})
+
+router.post('/album/:id', (req, res) => {
+    db.addComment(req.params.id, req.body.rating, req.body.comment).then(() => {
+        res.redirect(`/album/${req.params.id}`)
+    })
 })
 
 module.exports = router
