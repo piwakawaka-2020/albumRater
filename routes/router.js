@@ -11,18 +11,26 @@ router.get('/', (req, res) => {
 })
 
 router.get('/album/:id', (req, res) =>{
-    dummyData ={
-        name: "Album Title",
-        cover: "Image goes here",
-        artist: "The Bestest Group Ever",
-        year: "2019",
-        comments: [
-            {rating: "9", comment:"This is the first comment"},
-            {rating: "9", comment:"This is the first comment"},
-            {rating: "9", comment:"This is the first comment"}
-        ]
-    }
-    res.render('view.hbs', dummyData)
+
+    let albumObj
+
+    db.getAlbumsById(req.params.id).then(album => {
+        albumObj = album[0]
+        db.getComments(req.params.id).then(comments => {
+            commentArray = comments
+
+            viewData = {
+                name: albumObj.name,
+                cover: albumObj.cover,
+                artist: albumObj.artist,
+                year: albumObj.year,
+                comments: commentArray
+            }
+
+            res.render('view.hbs', viewData)
+        })
+    })
+
 })
 
 module.exports = router

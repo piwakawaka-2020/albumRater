@@ -11,14 +11,15 @@ function getAlbums(db = connection) {
 function getComments (id, db = connection) {
   return db('reviews')
   .select('rating', 'comment', 'album_id')
-  .where(id, 'album_id')
+  .where('album_id', id)
 }
 
 function getAlbumsById(id, db = connection) {
   return db('albums')
   .select()
-  .where(id, 'id')
+  .where('id', id)
 
+}
 //export functions
 module.exports = {
   getAlbums: getAlbums,
