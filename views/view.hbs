@@ -1,10 +1,10 @@
 <h1>{{name}}</h1>
-<img src={{cover}} />
+<img class='cover' src={{cover}} />
 <h2>{{artist}}</h2>
 <h2>{{year}}</h2>
 {{#each comments}}
   <div>
-    <h2>{{rating}}</h2>
+    <h2>{{rating}}/10</h2>
     <p>{{comment}}</p>
   </div>
 {{/each}}
