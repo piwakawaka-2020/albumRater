@@ -1,2 +1,2 @@
-# sammybook
-a book of sammies
+# Album rater
+a rater of albums
